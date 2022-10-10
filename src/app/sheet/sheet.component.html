@@ -1,0 +1,21 @@
+<div style="width: 50%; margin-left:20%">
+	<h3 style="text-align: center;">Excel data</h3>
+
+	<input type="file" (change)="ReadExcel($event)">
+<form #sample="ngForm">
+	<li scope="col" *ngFor="let data of ExcelData;let index=index;">Question<br>
+		{{data.Questions}}
+		<br><input  type="radio" name="answer"  (change)="change(data.a,index)" [value]="data.a">{{data.a}}
+		<br><input  type="radio" name="answer" (change)="change(data.b,index)" [value]="data.b" >{{data.b}}
+		<br><input  type="radio" name="answer" (change)="change(data.c,index)" [value]="data.c" >{{data.c}}
+		<br><input  type="radio" name="answer" (change)="change(data.d,index)" [value]="data.d" >{{data.d}}
+		<!--<br><input  type="radio" name="ans" [checked]="idx === 0" [value]="data.id">{{data.a}}
+		<br><input  type="radio" name="ans" [checked]="idx === 0" [value]="data.id">{{data.b}}
+		<br><input  type="radio" name="ans" [checked]="idx === 0" [value]="data.id">{{data.c}}
+		<br><input  type="radio" name="ans" [checked]="idx === 0" [value]="data.id">{{data.d}}-->
+		<br>
+		<br>Correct Answer: {{ans}}
+		<br>
+	</li><br>
+</form>
+</div>
